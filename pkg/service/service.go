@@ -12,6 +12,7 @@ type ChangePlaylist interface {
 	DeleteSong(id int) error
 	ChangeSong(track gocloudcamppart2.Track) error
 	GetTrackD(id int) bool
+	ShowSong() ([]gocloudcamppart2.Track, error)
 }
 
 type StartPLaylist interface {

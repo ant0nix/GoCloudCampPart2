@@ -60,3 +60,14 @@ func (r *ChangePlaylistRepoStruct) GetTrackD(id int) bool {
 		return false
 	}
 }
+
+func (r *ChangePlaylistRepoStruct) ShowSong() ([]gocloudcamppart2.Track, error) {
+	var output []gocloudcamppart2.Track
+	query := fmt.Sprintf("SELECT * FROM %s WHERE", playlistTable)
+	err := r.db.Select(&output, query)
+	if err != nil {
+		return output, err
+	} else {
+		return output, nil
+	}
+}

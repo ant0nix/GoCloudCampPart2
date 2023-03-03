@@ -7,7 +7,6 @@ import (
 
 type StartPlaylistStruct struct {
 	repo repository.StartPLaylist
-	// repo2 repository.ChangePlaylist
 }
 
 func NewStartPlaylistStruct(repo repository.StartPLaylist) *StartPlaylistStruct {

@@ -29,3 +29,7 @@ func (s *ChangePlaylistStruct) ChangeSong(track gocloudcamppart2.Track) error {
 func (s *ChangePlaylistStruct) GetTrackD(id int) bool {
 	return s.repo.GetTrackD(id)
 }
+
+func (s *ChangePlaylistStruct) ShowSong() ([]gocloudcamppart2.Track, error) {
+	return s.repo.ShowSong()
+}

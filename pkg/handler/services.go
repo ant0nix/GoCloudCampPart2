@@ -247,3 +247,17 @@ func (h *Handler) ChangeSong(c *gin.Context) {
 
 	}
 }
+
+func (h *Handler) ShowSong(c *gin.Context) {
+	var tracks []gocloudcamppart2.Track
+	tracks, err := h.services.ChangePlaylist.ShowSong()
+	if err != nil {
+		newErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+	for _, track := range tracks {
+		c.JSON(http.StatusOK, map[string]interface{}{
+			"answ": track,
+		})
+	}
+}

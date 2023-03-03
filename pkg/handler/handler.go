@@ -20,6 +20,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		adder.PATCH("/change-song/:id", h.ChangeSong)
 		adder.POST("/add-song", h.AddSong)
 		adder.DELETE("/delete-song/:id", h.DeleteSong)
+		adder.GET("/list", h.ShowSong)
 
 	}
 	play := router.Group("/play")
