@@ -61,6 +61,6 @@ func main() {
 
 func initConfig() error {
 	viper.AddConfigPath("configs")
-	viper.SetConfigName("tmp_comfig")
+	viper.SetConfigName("config")
 	return viper.ReadInConfig()
 }
