@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  go-cloud:
+    build: ./
+    command: ./wait-connection.sh db ./goCLoudTask -host=db
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=qwerty
+  
+  db:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - DB_PASSWORD=qwerty
+    ports:
+      - 5436:5432
+
+networks:
+  default:
+    external:
+      name: my-network
