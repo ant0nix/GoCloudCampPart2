@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   go-cloud:
     build: ./
-    command: ./wait-connection.sh db ./goCLoudTask -host=db
+    command: bash -c './wait-connection.sh db migrate -path ./schema -database postgres://postgres:${DB_PASSWORD}@db:5432/postgres?sslmode=disable up && ./goCLoudTask'
     ports:
       - 8080:8080
     depends_on:
@@ -17,11 +15,6 @@ services:
     volumes:
       - ./.database/postgres/data:/var/lib/postgresql/data
     environment:
-      - DB_PASSWORD=qwerty
+      - POSTGRES_PASSWORD=qwerty
     ports:
       - 5436:5432
-
-networks:
-  default:
-    external:
-      name: my-network
