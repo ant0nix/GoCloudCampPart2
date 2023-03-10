@@ -9,6 +9,6 @@ LANGUAGE plpgsql
 AS $$
 BEGIN
     INSERT INTO playlist (duration) VALUES (duration_in);
-COMMIT;
+    COMMIT;
 END;
 $$;

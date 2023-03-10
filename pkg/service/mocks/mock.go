@@ -90,6 +90,21 @@ func (mr *MockChangePlaylistMockRecorder) GetTrackD(id interface{}) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetTrackD", reflect.TypeOf((*MockChangePlaylist)(nil).GetTrackD), id)
 }
 
+// ShowSong mocks base method.
+func (m *MockChangePlaylist) ShowSong() ([]gocloudcamppart2.Track, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "ShowSong")
+	ret0, _ := ret[0].([]gocloudcamppart2.Track)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// ShowSong indicates an expected call of ShowSong.
+func (mr *MockChangePlaylistMockRecorder) ShowSong() *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ShowSong", reflect.TypeOf((*MockChangePlaylist)(nil).ShowSong))
+}
+
 // MockStartPLaylist is a mock of StartPLaylist interface.
 type MockStartPLaylist struct {
 	ctrl     *gomock.Controller
