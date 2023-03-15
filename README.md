@@ -63,10 +63,15 @@ End-points не требуют в теле запроса ничего. End-poin
 
 # Сторонние библиотеки
 [gin](https://github.com/gin-gonic/gin) v1.9.0
+
 [mock](github.com/golang/mock) v1.6.0
+
 [sqlx](github.com/jmoiron/sqlx) v1.3.5
+
 [godotenv](github.com/joho/godotenv) v1.5.1
+
 [pq](github.com/lib/pq) v1.2.0
+
 [viper](github.com/spf13/viper) v1.15.0
 
 # Примеры запросов
